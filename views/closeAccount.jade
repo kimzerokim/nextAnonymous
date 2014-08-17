@@ -1,0 +1,40 @@
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        link(rel='icon', type ='image/x-icon',href='/images/favicon.ico')
+        title 넥스트 익명 게시판
+        //Bootstrap core CSS
+        link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+        //Add custom CSS here
+        link(href='/stylesheets/closeAccount.css', rel='stylesheet', type='text/css')
+    body
+        nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+            .col-md-6.col-md-offset-3.navDiv
+                if (login === true)
+                    button.btn.btn-lg.btn-block.logout(onclick='location.href=\'/user/logout\';')  로그아웃
+                #title(onclick = 'toMain()')
+                    | 넥스트익명게시판
+                button.btn.btn-lg.btn-block.user(onclick='location.href=\'/user/review\';')  고객센터
+        .container
+            .row
+                .col-md-6.col-md-offset-3
+                    #closeAccount
+                        h2
+                            | 회원탈퇴
+                        h4
+                            | #{user} 님,
+                            br
+                            | 탈퇴하시려면 비밀번호를 한번 더 입력해주세요.
+                        form.writeReview(method ='post', role='form', action = '/user/closeAccount/complete')
+                            input#passwordArea(type='password', name='password')
+                            .form-actions
+                                button#closeAccountButton.btn.btn-lg.btn-danger.btn-block(type='submit')  탈퇴하기
+        //JavaScript
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+        script(src='/javascripts/closeAccount.js')
+        script(src='/javascripts/googleAnalytics.js')

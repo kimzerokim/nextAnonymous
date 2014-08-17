@@ -1,0 +1,99 @@
+html
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0')
+        meta(name='description', content='')
+        meta(name='author', content='')
+        link(rel='icon', type ='image/x-icon',href='/images/favicon.ico')
+        title 넥스트 익명 게시판
+        //Bootstrap core CSS
+        link(href='//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css', rel='stylesheet', type='text/css')
+        //Add custom CSS here
+        link(href='/stylesheets/main.css', rel='stylesheet', type='text/css')
+    body(style='')
+        nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+            .col-md-6.col-md-offset-3.navDiv
+                button.btn.btn-lg.btn-block.logout(onclick='location.href=\'/user/logout\';')  로그아웃
+                #title(onclick = 'toMain()')
+                    | 넥스트익명게시판
+                button.btn.btn-lg.btn-block.user(onclick='location.href=\'/user/review\';')  고객센터
+        #newCardButton(onclick ='newCard()')
+            | ↑ 새로운 소식
+        .container
+            .row
+                .col-md-6.col-md-offset-3.writePostCard
+                    if (tab === 0 || tab === 1)
+                        #introduction
+                            | 넥스트 익명 게시판입니다.
+                        #notice
+                            | 게시판의 소스는 여기에서 볼 수 있습니다.
+                            br
+                            |
+                    else if (tab === 2)
+                        #introduction
+                            | 자신이 관심글로 지정한 글을 모아 볼 수 있습니다.
+                    else if (tab === 3)
+                        #introduction
+                            | 자신이 쓴 글을 확인할 수 있습니다.
+                    if (tab === 0 || tab === 1)
+                        #writePost
+                            form.writeCommit(method ='post', role='form', action = '/card/add')
+                                textarea#postTextArea.simple(rows='3', cols='60', type='text', name='body')
+                                button#writeButton.btn.btn-lg.btn-primary.btn-block(type='submit', onclick = 'preventShowButton()')  글쓰기
+                                #newCardStart
+                    .btn-group.pageSelect
+                        button.btn.btn-default.pageSelectButton(type='button', onclick='location.href=\'/\';') 전체글
+                        button.btn.btn-default.pageSelectButton(type='button', onclick='location.href=\'/card/hitCard\';') 인기글
+                        button.btn.btn-default.pageSelectButton(type='button', onclick='location.href=\'/card/favoriteCard\';') 관심글
+                        button.btn.btn-default.pageSelectButton(type='button', onclick='location.href=\'/card/UserCard\';') 내 글
+        .container
+            .row
+                .col-md-6.col-md-offset-3.cardList
+                    each card in cards
+                        .card
+                            .cardInfomation
+                                .cardNum
+                                    | No.#{card._id}
+                                .cardCommitTime
+                                    | #{card.date}
+                            if (card.isAdmin === true)
+                                .cardBody(style='color: #E85247;')
+                                    | !{card.body}
+                            else
+                                .cardBody
+                                    | !{card.body}
+                            .cardStatus
+                                .commitCount
+                                    | 댓글 #{card.comments.length}개
+                                .favorite(onclick = 'location.href=\'/card/#{card._id}/setFavorite\';')
+                                    | 관심글
+                            .cardComment
+                                .commentList
+                                    each comment in card.comments
+                                        if (comment.isAdmin === true)
+                                              .comment(style='color: #E85247;')
+                                                | !{comment.body}
+                                        else
+                                            if(card.user === comment.user)
+                                                .comment(style='color: #5C81E8;')
+                                                    | !{comment.body}
+                                            else
+                                                .comment
+                                                    | !{comment.body}
+                                form.commentCommit(action = '/card/#{card._id}/comment/add', method = 'post', role='form')
+                                    input(type='hidden', name='cardId', value='#{card._id}')
+                                    textarea.commentBody(rows='1', cols='20', type='text', name='commentBody')
+                                    button.btn.btn-lg.btn-block.commentButton(type='submit')  댓글
+                        
+        footer
+            .col-md-6.col-md-offset-3
+                | © 2014 &nbsp
+                b 넥스트 익명 게시판
+                | &nbsp 모든 소스는 오픈되어있음
+                
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+        script(src='//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+        script(src='/javascripts/main.js')
+        script(src='/javascripts/googleAnalytics.js')
+

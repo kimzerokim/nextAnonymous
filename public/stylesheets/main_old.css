@@ -1,0 +1,271 @@
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "맑은 고딕", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    padding-top: 56px;
+}
+
+nav.navbar {
+    background-color: #5a5a5a;
+    min-height: 40px;
+}
+
+#title {
+    position : fixed;
+    left: 50%;
+    margin : 0 0 0 -101px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    color: #f8f8f8;
+    padding: 4px;
+    float: left;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+nav .user {
+    clear: both;
+    margin-top: 8px;
+    width: 50px;
+    height: 24px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 3px;
+    vertical-align: middle;
+    float: right;
+    z-index: 2;
+    background-color: #c7c7c7;
+}
+
+#newCardButton {
+    position: fixed;
+    width: 111px;
+    height: 26px;
+    border-radius: 15px;
+    background-color: #f3f3f3;
+    color: #427fe7;
+    z-index: 3;
+    font-size: 13px;
+    box-shadow: 1px 2px 6px #848484;
+    text-align: center;
+    line-height: 26px;
+    vertical-align: middle;
+    cursor: pointer;
+    left: 50%;
+    margin: 0 0 0 -56px;
+    display: none;
+}
+
+.writePostCard {
+    display: table;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: #525252;
+}
+
+#introduction {
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px rgba(230, 121, 104, 0.45);
+    background-color: #E57766;
+    color: #eeeeee;
+    font-size: 13px;
+    text-align: center;
+    z-index: 1;
+}
+
+#writePost {
+    height: auto;
+    margin-top: 20px;
+    padding-top: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 16px;
+    border: 1px solid #d4d4d4;
+    border-radius: 3px;
+    background-color: #fafafa;
+    box-shadow: 2px 2px 6px rgba(162, 162, 162, 0.4);
+    overflow: hidden;
+}
+
+#writePost .writeCommit {
+    padding-top: 4px;
+    width: 100%;
+    height: auto;
+    min-height: 42px;
+}
+
+#writePost #postTextArea {
+    width: 100%;
+    border: 1px solid #a5abb2;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-right: 2%;
+    resize: none;
+    line-height: 23px;
+}
+
+#writePost #writeButton {
+    clear: both;
+    margin-top: 10px;
+    width: 50px;
+    min-height: 25px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 7px;
+    vertical-align: middle;
+    float: right;
+}
+
+.cardList {
+    display: table;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    color: #525252;
+}
+
+.col-md-6.col-md-offset-3.card {
+    margin-top: 25px;
+    background-color: #fafafa;
+    border-radius: 3px;
+    border: 1px solid #d4d4d4;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-shadow: 2px 2px 6px rgba(162, 162, 162, 0.4);
+    height: auto;
+}
+
+.cardInfomation {
+    width: 100%;
+    height: 20px;
+    font-size: 12px;
+    margin-top: 16px;
+    color: #999595;
+}
+
+.cardInfomation .cardNum {
+    width: 80px;
+    height: auto;
+    float: left;
+    text-align: left;
+    margin-left: 22px;
+}
+
+.cardInfomation .cardCommitTime {
+    width: 150px;
+    height: auto;
+    float: right;
+    text-align: right;
+    margin-right: 22px;
+}
+
+.col-md-6.col-md-offset-3.card .cardBody {
+    clear: both;
+    margin-top: 16px;
+    margin-bottom: 19px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: left;
+}
+
+.cardStatus {
+    clear: both;
+    width: 100%;
+    height: 30px;
+    font-size: 12px;
+    padding-left: 25px;
+    padding-right: 15px;
+    background-color: #e7e8ec;
+    border-top: 1px solid #d4d4d4;
+    border-bottom: 1px solid #d4d4d4;
+    vertical-align: middle;
+    line-height: 28px;
+}
+
+.cardStatus .likeCount {
+    float: left;
+    width: 60px;
+    height: 30px;
+    text-align: left;
+}
+
+.cardStatus .commitCount {
+    float: left;
+    width: 60px;
+    height: 30px;
+    text-align: left;
+}
+
+.cardComment {
+    clear: both;
+    width: 100%;
+    height: auto;
+    background-color: #eff0f5;
+    overflow: hidden;
+}
+
+.cardComment .commentList {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.cardComment .commentList .comment {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 6px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #ded9d9;
+    text-align: left;
+}
+
+.cardComment .commentCommit {
+    padding-top: 4px;
+    width: 100%;
+    min-height: 42px;
+    padding-left: 22px;
+    padding-bottom: 4px;
+    margin-bottom: 0px;
+}
+
+.cardComment .commentCommit .commentBody {
+    width: 82%;
+    border: 1px solid #a5abb2;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-right: 2%;
+    margin-bottom: 9px;
+    float: left;
+    word-break: break-all;
+    resize: none;
+    line-height: 23px;
+}
+
+.cardComment .commentCommit .commentButton {
+    width: 10%;
+    min-height: 25px;
+    border-radius: 2px;
+    border: 1px solid #a5abb2;
+    font-size: 12px;
+    line-height: 7px;
+    vertical-align: middle;
+}
+
+footer {
+    height: 50px;
+    padding: 16px;
+    text-align: center;
+    color: #6e6c6c;
+    font-size: 15px;
+}

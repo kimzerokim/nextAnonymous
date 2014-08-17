@@ -1,0 +1,103 @@
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "맑은 고딕", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    padding-top: 76px;
+}
+
+nav.navbar {
+    background-color: #5a5a5a;
+    min-height: 40px;
+}
+
+#title {
+    position : fixed;
+    left: 50%;
+    margin : 0 0 0 -101px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    color: #f8f8f8;
+    padding: 4px;
+    float: left;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+nav .user {
+    margin-top: 8px;
+    width: 50px;
+    height: 24px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 3px;
+    vertical-align: middle;
+    float: right;
+    z-index: 2;
+    background-color: #c7c7c7;
+}
+
+nav .logout {
+    clear: both;
+    margin-top: 8px;
+    width: 50px;
+    height: 24px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 3px;
+    vertical-align: middle;
+    float: left;
+    z-index: 2;
+    background-color: #c7c7c7;
+}
+
+.review {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+#userReview {
+    height: auto;
+    padding : 30px;
+    background-color: #fafafa;
+    border-radius: 10px;
+    border: 1px solid #d4d4d4;
+    box-shadow: 2px 2px 6px rgba(162, 162, 162, 0.4);
+    overflow: scroll;
+}
+
+#userReview > h2 {
+    margin-top: 0px;
+    margin-bottom: 30px;
+    color : #525252;
+}
+
+#reviewTextArea {
+    width: 100%;
+    border: 1px solid #a5abb2;
+    border-radius: 2px;
+    font-size: 14px;
+    margin-right: 2%;
+    resize: none;
+    line-height: 23px;
+}
+
+.form-actions {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+}
+
+#writeButton {
+    width: 70%;
+    height: 46px;
+    margin : 22px auto -20px auto;
+}

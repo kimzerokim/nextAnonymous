@@ -1,0 +1,66 @@
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "맑은 고딕", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    padding-top: 86px;
+}
+
+nav.navbar {
+    background-color: #5a5a5a;
+    min-height: 40px;
+}
+
+#title {
+    position : fixed;
+    left: 50%;
+    margin : 0 0 0 -101px;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    font-size: 16px;
+    color: #f8f8f8;
+    padding: 4px;
+    float: left;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+nav .user {
+    clear: both;
+    margin-top: 8px;
+    width: 50px;
+    height: 24px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 3px;
+    vertical-align: middle;
+    float: right;
+    z-index: 2;
+    background-color: #c7c7c7;
+}
+
+.messageField {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#message {
+    height: 40px;
+    text-align: center;
+    background-color: #fafafa;
+    border-radius: 10px;
+    border: 1px solid #d48482;
+    color : #525252;
+    line-height: 36px;
+    vertical-align: middle;
+    font-size: 14px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
